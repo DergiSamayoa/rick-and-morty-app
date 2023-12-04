@@ -1,11 +1,23 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { getRandomNumber } from "./helpers/random.js";
+import Location from "./components/Location.jsx";
+
 function App() {
-  return (
-    <>
-      <h1 className="text-center p-2 font-bold">
-        Starter React - Vite - Javascript - TailwindCSS
-      </h1>
-    </>
-  );
+    const [locationInfo, setLocationInfo] = useState(null)
+    useEffect(() => {
+        const randomDimension = getRandomNumber(126);
+        axios
+            .get(`https://rickandmortyapi.com/api/location/${randomDimension}`)
+            .then(({data}) => setLocationInfo(data))
+            .catch((err) => console.log(err));
+    }, []);
+
+    return (
+        <main>
+            <Location locationInfo = {locationInfo} setLocationInfo = {setLocationInfo}/>
+        </main>
+    );
 }
 
 export default App;

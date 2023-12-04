@@ -1,4 +1,7 @@
-# React with Vite, Tailwind, Axios
+# Rick and Morty app
+
+
+## React with Vite, Tailwind, Axios
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
