@@ -30,7 +30,7 @@ const ResidentList = ({residents}) => {
                 </section>
             </section>
             <section className="bg-no-repeat bg-bottom h-screen bg-cover
-                        bg-[url('./images/rickandmorty-bg-bottom_loadded.png')]">
+                        bg-[url('./images/rickandmorty-bg-bottom_loadded.webp')]">
                 <ul className="flex justify-center gap-2 flex-wrap p-4
                         bg-gradient-to-b from-black to-100% w-screen pt-40">
                     {
@@ -38,7 +38,8 @@ const ResidentList = ({residents}) => {
                             <li key={page} >
                                 <button 
                                     onClick={() => handleChangePage(page)}
-                                    className={`"font-bold text-xl border-4 h-12 aspect-square rounded-full " 
+                                    className={`"font-bold text-xl border-4 h-12 aspect-square rounded-full 
+                                            hover:border-yellow-200 hover:bg-red-950/70 hover:text-yellow-200 " 
                                             ${currentPage === page 
                                                 ? "border-yellow-200 bg-red-950/70 text-yellow-200"
                                                 : "border-red-950/70 bg-yellow-200 text-red-950/70"}`}
