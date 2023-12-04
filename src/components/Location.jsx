@@ -28,7 +28,7 @@ const Location = ({locationInfo, setLocationInfo}) => {
                     <form onSubmit={handleSubmit} className="">
                         <div className="">
                             <input type="number" min="1" max="126" name="newLocation" placeholder="Type a location ID..." 
-                                    className="w-80 p-1 pl-4 border-2 border-red-950/70 rounded-2xl z-20" />
+                                    className="w-80 p-1 pl-4 border-2 border-red-950/70 rounded-2xl focus:outline-none focus:ring-0 z-20" />
                             <button type="submit"
                                     className="w-28 p-1 border-2 border-red-950/70 bg-yellow-200 rounded-2xl text-center absolute right-0 z-10
                                             hover:border-yellow-200 hover:bg-red-950/90 hover:text-yellow-200 ">
