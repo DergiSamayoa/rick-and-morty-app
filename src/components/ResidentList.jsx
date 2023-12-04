@@ -21,7 +21,7 @@ const ResidentList = ({residents}) => {
     return (
         <div >
             <section className="mx-auto max-w-[1200px]">
-                <section className="grid gap-8 grid-cols-[repeat(auto-fill,250px)] justify-center">
+                <section className="grid gap-6 grid-cols-[repeat(auto-fill,250px)] justify-center">
                     {
                         pageElements.map((resident, index) => (
                             <ResidentCard key={index} endpointResident={resident} />
@@ -29,10 +29,10 @@ const ResidentList = ({residents}) => {
                     }
                 </section>
             </section>
-            <section className="bg-no-repeat bg-bottom h-screen bg-cover
+            <section className="bg-no-repeat bg-bottom h-screen w-[100%] bg-cover
                         bg-[url('/images/rickandmorty-bg-bottom_loadded.webp')]">
-                <ul className="flex justify-center gap-2 flex-wrap p-4
-                        bg-gradient-to-b from-black to-100% w-screen pt-40">
+                <ul className="flex justify-center gap-2 flex-wrap p-4 w-[100%] 
+                        bg-gradient-to-b from-black to-100% h-screen pt-40">
                     {
                         pages.map((page) => (
                             <li key={page} >

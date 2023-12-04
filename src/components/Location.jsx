@@ -42,19 +42,19 @@ const Location = ({locationInfo, setLocationInfo}) => {
                     w-5/6">
                 <h2 className="mb-3 font-semibold text-xl text-red-950/70">¡Welcome to {locationInfo?.name}!</h2>
                 <ul className="grid grid-cols-3 gap-2 justify-between text-center  text-red-950/70 w-full">
-                    <li className="">
+                    <li className="line-clamp-1">
                         <span className="font-semibold">Type:</span> {locationInfo?.type}
                     </li>
-                    <li className="b">
+                    <li className="line-clamp-1">
                         <span className="font-semibold">Dimension:</span> {locationInfo?.dimension}
                     </li>
-                    <li className="">
+                    <li className="line-clamp-1">
                         <span className="font-semibold">Population:</span> {locationInfo?.residents.length}
                     </li>
                 </ul>                    
             </article>
         </header>
-        <article className="bg-gradient-to-t from-black from-[99%] sm:from-90% w-screen">
+        <article className="bg-gradient-to-t from-black from-[99%] sm:from-90% w-[100%]">
             <ResidentList residents = {locationInfo?.residents ?? []}  />
         </article>
     </section>
