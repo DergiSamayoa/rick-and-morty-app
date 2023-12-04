@@ -14,7 +14,7 @@ const Location = ({locationInfo, setLocationInfo}) => {
     }
   return (
     <section className="bg-no-repeat bg-cover bg-center h-screen flex flex-col items-center
-                bg-[url('./images/rickandmorty-bg-top_loadded.webp')] ">
+                bg-[url('/images/rickandmorty-bg-top_loadded.webp')] ">
         <header className="flex flex-col items-center mt-20 max-w-[1200px]">
             <div className="flex flex-col justify-between items-center mb-10 gap-10
                     sm:flex-row sm:gap-40">

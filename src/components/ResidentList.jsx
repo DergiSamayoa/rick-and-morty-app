@@ -30,7 +30,7 @@ const ResidentList = ({residents}) => {
                 </section>
             </section>
             <section className="bg-no-repeat bg-bottom h-screen bg-cover
-                        bg-[url('./images/rickandmorty-bg-bottom_loadded.webp')]">
+                        bg-[url('/images/rickandmorty-bg-bottom_loadded.webp')]">
                 <ul className="flex justify-center gap-2 flex-wrap p-4
                         bg-gradient-to-b from-black to-100% w-screen pt-40">
                     {
