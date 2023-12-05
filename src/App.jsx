@@ -12,7 +12,6 @@ function App() {
     for(let i = 1; i <= totalLocations; i++) {
         arrayLocationsId.push(i)
     }
-    // console.log(arrayLocationsId)
     useEffect(() => {
         const randomDimension = getRandomNumber(totalLocations);
         axios
@@ -26,7 +25,6 @@ function App() {
             .get(`https://rickandmortyapi.com/api/location/${arrayLocationsId}`)
             .then(({data}) => {
                     setLocations(data)
-                    // console.log(locations)
                 })
             .catch((err) => console.log(err));
     }, []);
