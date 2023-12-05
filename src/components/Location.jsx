@@ -1,19 +1,26 @@
 import axios from "axios";
-
 import ResidentList from "./ResidentList.jsx";
+import AutocompleteInput from "./AutoCompleteInput.jsx";
 
-const Location = ({locationInfo, setLocationInfo}) => {
+const Location = ({locationInfo, setLocationInfo, locations}) => {
+
+    const locationNames = locations?.map((location) => location.name)
+
     const handleSubmit = (event) => {
+
         event.preventDefault();
-        const newLocationId = event.target.newLocation.value;
+
+        const newLocation = event.target.newLocation.value;
+        const newLocationId = locations.find((loc) => loc.name === newLocation).id;
         
-        if (Number.isInteger(Number(newLocationId)) & newLocationId.length > 0) {
+        if (Number.isInteger(Number(newLocationId))) {
             axios
                 .get(`https://rickandmortyapi.com/api/location/${newLocationId}`)
                 .then(({data}) => setLocationInfo(data))
                 .catch((err) => console.log(err));
         }
     }
+
     return (
         <section className="bg-no-repeat bg-cover bg-center h-screen flex flex-col items-center
                     bg-[url('/images/rickandmorty-bg-top_loadded.webp')] ">
@@ -29,13 +36,7 @@ const Location = ({locationInfo, setLocationInfo}) => {
                     <div className="align-middle relative">
                         <form onSubmit={handleSubmit}>
                             <div className="">
-                                <input type="number" min="1" max="126" name="newLocation" placeholder="Type a location ID..." 
-                                        className="w-80 p-1 pl-4 border-2 border-red-950/70 rounded-2xl focus:outline-none focus:ring-0 z-20" />
-                                <button type="submit"
-                                        className="w-28 p-1 border-2 border-red-950/70 bg-yellow-200 rounded-2xl text-center absolute right-0 z-10
-                                                hover:border-yellow-200 hover:bg-red-950/90 hover:text-yellow-200 ">
-                                    Search
-                                </button>
+                                <AutocompleteInput options={locationNames} />
                             </div>
                         </form>
                     </div>

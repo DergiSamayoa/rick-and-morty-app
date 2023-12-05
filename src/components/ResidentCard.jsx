@@ -19,7 +19,7 @@ const ResidentCard = ({endpointResident}) => {
 
     return (
         <article className="w-[260px] flex flex-col items-center relative mb-48">
-            <header className="relative z-50">
+            <header className="relative z-40">
                 <img src={residentInfo?.image} alt="" className="aspect-square w-[150px] border-4 border-red-950/90 rounded-full" />
                 <div className="flex items-center gap-2 bg-black/50 rounded-xl p-1 px-2
                                 absolute bottom-6 left-1/2 -translate-x-1/2 text-white">
@@ -27,7 +27,7 @@ const ResidentCard = ({endpointResident}) => {
                     <span>{residentInfo?.status}</span>
                 </div>
             </header>
-            <section className="border-8 border-red-950/70 rounded-2xl w-[100%] h-[200px] absolute top-[120px] bg-[#856888] z-40">
+            <section className="border-8 border-red-950/70 rounded-2xl w-[100%] h-[200px] absolute top-[120px] bg-[#856888] z-30">
                 <div className="bg-[#C9BEDC] h-[95%] rounded-br-full rounded-bl-lg top-10px relative mt-2">
                     <h5 className="line-clamp-1 text-xl text-center text-red-950/70 pt-6 pb-2 mb-3 font-semibold bg-[#EDE288] rounded-lg absolute -top-[8px] w-full">
                         {residentInfo?.name}
