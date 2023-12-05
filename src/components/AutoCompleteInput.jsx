@@ -21,11 +21,6 @@ const AutocompleteInput = ({ options }) => {
         setFilteredOptions([]);
     };
 
-    // useState(() => {
-    //     handleOptionClick('')
-    //     console.log("useEffect(''):", inputValue)
-    // }, [inputValue]);
-
     return (
         <div className="relative">
             <input

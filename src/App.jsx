@@ -20,11 +20,12 @@ function App() {
             .catch((err) => console.log(err));
     }, []);
 
-    useState(() => {
+    useEffect(() => {
         axios
             .get(`https://rickandmortyapi.com/api/location/${arrayLocationsId}`)
             .then(({data}) => {
                     setLocations(data)
+                    console.log(data)
                 })
             .catch((err) => console.log(err));
     }, []);
