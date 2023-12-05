@@ -13,7 +13,7 @@ This app uses the [rickandmorty api](https://rickandmortyapi.com/)
 - The search is autocomplete when you type letters or numbers matching the name of the places.
 
 
-## [DEMO](https://vercel.com/dergi-samayoa/rick-and-morty-app)
+## [See DEMO](https://rick-and-morty-app-woad.vercel.app/)
 
 
 
