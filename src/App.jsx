@@ -6,9 +6,15 @@ import Location from "./components/Location.jsx";
 function App() {
     const [locationInfo, setLocationInfo] = useState(null)
     const [locations, setLocations] = useState()
-    // let arrayLocations = []
+    const totalLocations = 126
+    let arrayLocationsId = []
+
+    for(let i = 1; i <= totalLocations; i++) {
+        arrayLocationsId.push(i)
+    }
+    // console.log(arrayLocationsId)
     useEffect(() => {
-        const randomDimension = getRandomNumber(126);
+        const randomDimension = getRandomNumber(totalLocations);
         axios
             .get(`https://rickandmortyapi.com/api/location/${randomDimension}`)
             .then(({data}) => setLocationInfo(data))	
@@ -17,11 +23,10 @@ function App() {
 
     useState(() => {
         axios
-            .get("https://rickandmortyapi.com/api/location/[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]")
+            .get(`https://rickandmortyapi.com/api/location/${arrayLocationsId}`)
             .then(({data}) => {
                     setLocations(data)
-                    // setLocations(data.map((location) => location.name))
-                    console.log(locations)
+                    // console.log(locations)
                 })
             .catch((err) => console.log(err));
     }, []);
