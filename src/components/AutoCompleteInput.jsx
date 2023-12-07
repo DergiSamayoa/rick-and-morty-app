@@ -39,7 +39,7 @@ const AutocompleteInput = ({ options }) => {
                 Search
             </button>
             {filteredOptions.length > 0 && (
-                <ul className="absolute bg-yellow-200 text-red-950/70 border rounded mt-1 p-2 w-full z-50">
+                <ul className="absolute bg-yellow-200 text-red-950/70 border rounded mt-1 p-2 w-full z-50 text-">
                 {filteredOptions.map((option, index) => (
                     <li
                         key={index}
@@ -48,7 +48,7 @@ const AutocompleteInput = ({ options }) => {
                     >
                     {option}
                     </li>
-                ))}
+                )).slice(0, 10)}
                 </ul>
             )}
         </div>
