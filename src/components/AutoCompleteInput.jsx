@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const AutocompleteInput = ({ options }) => {
     const [inputValue, setInputValue] = useState('');
@@ -10,8 +10,8 @@ const AutocompleteInput = ({ options }) => {
             setFilteredOptions(options.filter(option => 
                     option.toLowerCase().includes(event.target.value.toLowerCase())
             ));
-            // console.log(filteredOptions)
-        } else {
+        } 
+        else {
             setFilteredOptions([]);
         }
     };
@@ -19,7 +19,6 @@ const AutocompleteInput = ({ options }) => {
     const handleOptionClick = (option) => {
         setInputValue(option);
         setFilteredOptions([]);
-        // console.log("autocomplete:",option)
     };
 
     return (
@@ -29,13 +28,15 @@ const AutocompleteInput = ({ options }) => {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
-                placeholder='Type a location name.'
+                placeholder='Type location (name or id)'
                 className="w-80 p-1 pl-4 border-2 border-red-950/70 rounded-2xl z-20
                         focus:outline-none focus:ring-0 focus:ring-yellow-200"
             />
-            <button type="submit"
-                        className="w-28 p-1 border-2 border-red-950/70 bg-yellow-200 rounded-2xl text-center absolute right-0 z-10
-                                hover:border-yellow-200 hover:bg-red-950/90 hover:text-yellow-200 ">
+            <button 
+                type="submit"
+                onClick={() => handleOptionClick(inputValue)}
+                className="w-28 p-1 border-2 border-red-950/70 bg-yellow-200 rounded-2xl text-center absolute right-0 z-10
+                        hover:border-yellow-200 hover:bg-red-950/90 hover:text-yellow-200 ">
                 Search
             </button>
             {filteredOptions.length > 0 && (

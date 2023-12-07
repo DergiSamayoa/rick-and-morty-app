@@ -10,13 +10,25 @@ const Location = ({locationInfo, setLocationInfo, locations}) => {
 
         event.preventDefault();
 
-        const newLocation = event.target.newLocation.value;
-        const newLocationId = locations.find((loc) => loc.name === newLocation).id;
+        let newLocation = event.target.newLocation.value;
+        let newLocationId
+        if (Number.isInteger(Number(newLocation))) {            
+            newLocationId = newLocation
+        }
+        else {
+            newLocationId = newLocation
+            newLocationId = locations.find((loc) => loc.name.toLowerCase() === newLocation.toLowerCase()).id
+        }
+        event.target.newLocation.value = ""
         
-        if (Number.isInteger(Number(newLocationId))) {
+        if(newLocationId > 0 && newLocationId < locations.length + 1) {
+            // Este acceso a la api se puede eliminar y colocar una búsqueda sobre el array locations que ya contiene los datos
             axios
                 .get(`https://rickandmortyapi.com/api/location/${newLocationId}`)
-                .then(({data}) => setLocationInfo(data))
+                .then(({data}) => { 
+                    setLocationInfo(data)
+                    locations = []
+                })
                 .catch((err) => console.log(err));
         }
     }

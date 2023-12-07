@@ -1,11 +1,21 @@
+<p align="center" width="300">
+   <img align="center" width="200" src="https://raw.githubusercontent.com/DergiSamayoa/rick-and-morty-app/main/public/images/rickandmorty-logo.png" />
+</p>
+
 # Rick and Morty app
 
+This app uses the [rickandmorty api](https://rickandmortyapi.com/)
 
-## React with Vite, Tailwind, Axios
+- When the page loads, the characters are rendered in a random location.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Search for locations by id or name. 
 
-Currently, two official plugins are available:
+- The search is autocomplete when you type letters or numbers matching the name of the places.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## [See DEMO](https://rick-and-morty-app-woad.vercel.app/)
+
+
+
+### Use React with Vite, Tailwind and Axios
+
